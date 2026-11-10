@@ -11,10 +11,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
-    Shuffleboard.getTab(getName()).addFloat("test float", () -> {
-      float a = 0.1f;
-      float b = 2.3f;
-      return a*b;
+    Shuffleboard.getTab(getName()).addFloat("Servo", () -> {
+      int angle = 12;
+      float speed = 46.2f;
+      return angle+speed;
     });
   }
 
@@ -28,7 +28,7 @@ public class ExampleSubsystem extends SubsystemBase {
     // Subsystem::RunOnce implicitly requires `this` subsystem.
     return runOnce(
         () -> {
-          /* one-time action goes here */
+          
         });
   }
 
