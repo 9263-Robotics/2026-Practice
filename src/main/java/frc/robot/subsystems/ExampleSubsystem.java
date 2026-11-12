@@ -10,7 +10,20 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
+<<<<<<< Updated upstream
 
+=======
+    Shuffleboard.getTab(getName()).addFloat("test float", () -> {
+      float a = 0.1f;
+      float b = 2.3f;
+      return a*b;
+    });
+    Shuffleboard.getTab(getName()).addFloat("hi its vaibhavi", () -> {
+      float a = 3.14f;
+      float b = 4.1112f;
+      return a*b;
+    });
+>>>>>>> Stashed changes
   }
 
   /**
