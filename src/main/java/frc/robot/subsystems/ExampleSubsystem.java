@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -15,7 +16,6 @@ public class ExampleSubsystem extends SubsystemBase {
       float b = 3.24f;
       return a/b;
     });
-})
   }
 
   /**
