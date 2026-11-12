@@ -10,7 +10,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
-
+    Shuffleboard.getTab(getName()).addFloat("test float", () -> {
+      float a = 6.45f;
+      float b = 3.24f;
+      return a/b;
+    });
+})
   }
 
   /**
