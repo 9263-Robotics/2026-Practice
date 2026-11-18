@@ -8,14 +8,21 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
+
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
+
+  TalonFX motor;
+
   public ExampleSubsystem() {
     Shuffleboard.getTab(getName()).addFloat("test float", () -> {
       float a = 6.45f;
       float b = 3.24f;
       return a/b;
     });
+    motor = new TalonFX(14);
   }
 
   /**
@@ -45,6 +52,7 @@ public class ExampleSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    motor.set(0.1);
   }
 
   @Override
