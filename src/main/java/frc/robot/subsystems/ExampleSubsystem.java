@@ -4,13 +4,18 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
-
+    Shuffleboard.getTab(getName()).addFloat("hello", () -> {
+      
+        return 2.6f;
+      
+    });
   }
 
   /**
