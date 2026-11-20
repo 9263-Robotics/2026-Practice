@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
-  TalonFX motor;
+  TalonFX motor = new TalonFX(14);
   public final float mspeed = 0.3f;
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
