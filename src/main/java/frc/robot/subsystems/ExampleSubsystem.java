@@ -4,14 +4,18 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
+  TalonFX motor14;
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
-
+     
+      motor14 = new TalonFX(14);
     Shuffleboard.getTab(getName()).addFloat("test float", () -> {
       float a = 0.1f;
       float b = 2.3f;
@@ -51,7 +55,9 @@ public class ExampleSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    motor14.set (0.25);
   }
+
 
   @Override
   public void simulationPeriodic() {
