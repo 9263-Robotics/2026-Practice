@@ -33,9 +33,19 @@ public class ExampleSubsystem extends SubsystemBase {
   public Command exampleMethodCommand() {
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
-    return runOnce(
+
+    // run(func) = execute while button pressed
+    // runEnd(func, func) = while button pressed + 2 when ended
+    // runOnce(func) = once when button pressed
+    // startEnd(func,func) = run 1 when pressed, 2 when end
+    // startRun(func,func) = run 1 when pressed, 2 while held
+    return startEnd(
         () -> {
           /* one-time action goes here */
+          motor.set(0.2);
+        },
+        () -> {
+          motor.set(0);
         });
   }
 

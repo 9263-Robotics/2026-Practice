@@ -7,11 +7,14 @@ package frc.robot.commands;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 /** An example command that uses an example subsystem. */
 public class ExampleCommand extends Command {
   @SuppressWarnings("PMD.UnusedPrivateField")
   private final ExampleSubsystem m_subsystem;
-
+  
+  motor = new TalonFX(14);
   /**
    * Creates a new ExampleCommand.
    *
@@ -25,19 +28,25 @@ public class ExampleCommand extends Command {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    motor.set(0.2);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
+  // while button pressedd
   @Override
   public void execute() {
     if (m_subsystem.exampleCondition()){
       // do something
+      motor.set(0.1);
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    motor.set(0);
+  }
 
   // Returns true when the command should end.
   @Override
