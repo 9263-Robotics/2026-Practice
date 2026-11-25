@@ -14,7 +14,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
 
-  TalonFX motor;
+  public TalonFX motor;
 
   public ExampleSubsystem() {
     Shuffleboard.getTab(getName()).addFloat("test float", () -> {
