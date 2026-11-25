@@ -13,8 +13,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 public class ExampleCommand extends Command {
   @SuppressWarnings("PMD.UnusedPrivateField")
   private final ExampleSubsystem m_subsystem;
-  
-  motor = m_subsystem.motor;
+  TalonFX motor;
   /**
    * Creates a new ExampleCommand.
    *
@@ -22,6 +21,7 @@ public class ExampleCommand extends Command {
    */
   public ExampleCommand(ExampleSubsystem subsystem) {
     m_subsystem = subsystem;
+    motor = m_subsystem.motor;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
