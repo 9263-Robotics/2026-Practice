@@ -4,15 +4,14 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public ExampleSubsystem() {
-<<<<<<< Updated upstream
 
-=======
     Shuffleboard.getTab(getName()).addFloat("test float", () -> {
       float a = 0.1f;
       float b = 2.3f;
@@ -23,7 +22,6 @@ public class ExampleSubsystem extends SubsystemBase {
       float b = 4.1112f;
       return a*b;
     });
->>>>>>> Stashed changes
   }
 
   /**
