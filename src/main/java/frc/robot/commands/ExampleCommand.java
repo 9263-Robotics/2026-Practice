@@ -14,7 +14,7 @@ public class ExampleCommand extends Command {
   @SuppressWarnings("PMD.UnusedPrivateField")
   private final ExampleSubsystem m_subsystem;
   
-  motor = new TalonFX(14);
+  motor = m_subsystem.motor;
   /**
    * Creates a new ExampleCommand.
    *
