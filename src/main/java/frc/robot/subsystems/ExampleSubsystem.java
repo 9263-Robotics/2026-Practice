@@ -29,11 +29,16 @@ public class ExampleSubsystem extends SubsystemBase {
   public Command exampleMethodCommand() {
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
-    return runOnce(
+    return runEnd(
         () -> {
-          
+          motor.set(0.6);
+        },
+        
+        () -> {
+          motor.set(0.3);
         });
-  }
+
+      }
 
   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
